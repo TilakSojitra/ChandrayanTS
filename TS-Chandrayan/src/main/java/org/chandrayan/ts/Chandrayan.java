@@ -10,6 +10,10 @@ public class Chandrayan {
     public Chandrayan() {
     }
 
+    public Chandrayan(String direction) {
+        this.direction = direction;
+    }
+
     public Chandrayan(Position position, String direction) {
         this.position = position;
         this.direction = direction;
@@ -52,7 +56,10 @@ public class Chandrayan {
         return Objects.hash(position, direction);
     }
 
-    public String turnUpwards(){ return "U"; }
+    public String turnUpwards(){
+//        this.setDirection("U");
+        return this.direction;
+    }
 
     public String turnDownwards(){ return "D";}
 

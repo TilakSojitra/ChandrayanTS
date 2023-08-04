@@ -1,9 +1,13 @@
 package org.chandrayan.ts;
 
-public class DriverClass {
-    public static void main(String[] args) {
-        System.out.println("Hello world!");
-    }
+import java.util.Scanner;
 
-    public int add(int x,int y){ return x+y; }
+public class DriverClass {
+
+    private Chandrayan chandrayan;
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+    }
 }
