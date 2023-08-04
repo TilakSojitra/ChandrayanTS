@@ -22,7 +22,7 @@ public class DriverClassTest {
 
     @Test
     public void testTurnLeft() {
-        chandrayan.setDirection("W");
+        chandrayan.setDirection("U");
         String curDir = chandrayan.getDirection();
 
         if(curDir.equals("N") || curDir.equals("U") || curDir.equals("D")) assertEquals("W",chandrayan.turnLeft());
@@ -33,7 +33,7 @@ public class DriverClassTest {
 
     @Test
     public void testTurnRight() {
-        chandrayan.setDirection("W");
+        chandrayan.setDirection("U");
         String curDir = chandrayan.getDirection();
 
         if(curDir.equals("N") || curDir.equals("U") || curDir.equals("D")) assertEquals("E",chandrayan.turnRight());

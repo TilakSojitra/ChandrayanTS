@@ -63,9 +63,43 @@ public class Chandrayan {
 
     public String turnDownwards(){ return "D";}
 
-    public String turnLeft(){ return "W";}
+    public String turnLeft(){
+        String curDir = this.getDirection();
+        switch(curDir){
+            case "W": // If Direction is west then turn towards South.
+                this.setDirection("S");
+                break;
+            case "S": // If Direction is south then turn towards East.
+                this.setDirection("E");
+                break;
+            case "E": // If Direction is East then turn towards North.
+                this.setDirection("N");
+                break;
+            default: // If Direction is up,down or north then turn towards West.
+                this.setDirection("W");
+                break;
+        }
+        return this.getDirection();
+    }
 
-    public String turnRight(){ return "E";}
+    public String turnRight(){
+        String curDir = this.getDirection();
+        switch(curDir){
+            case "W": // If Direction is west then turn towards North.
+                this.setDirection("N");
+                break;
+            case "S": // If Direction is south then turn towards West.
+                this.setDirection("W");
+                break;
+            case "E": // If Direction is east then turn towards South
+                this.setDirection("S");
+                break;
+            default: // If Direction is up,down or north then turn towards East.
+                this.setDirection("E");
+                break;
+        }
+        return this.getDirection();
+    }
 
     public Position moveForward() {
         this.position.setY(this.position.getY()+1);
