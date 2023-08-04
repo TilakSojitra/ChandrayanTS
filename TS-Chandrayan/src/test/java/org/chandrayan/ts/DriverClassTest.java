@@ -67,7 +67,7 @@ public class DriverClassTest {
             assertEquals(pNew,chandrayan.moveForward());
         }
         else if(curDir.equals("W")){
-            Position pNew = new Position(pOld.getX()-1, pOld.getY(), pOld.getZ()+1);
+            Position pNew = new Position(pOld.getX()-1, pOld.getY(), pOld.getZ());
             assertEquals(pNew,chandrayan.moveForward());
         }
         else if(curDir.equals("D")){
@@ -100,7 +100,7 @@ public class DriverClassTest {
             assertEquals(pNew,chandrayan.moveBackward());
         }
         else if(curDir.equals("W")){
-            Position pNew = new Position(pOld.getX()+1, pOld.getY(), pOld.getZ()+1);
+            Position pNew = new Position(pOld.getX()+1, pOld.getY(), pOld.getZ());
             assertEquals(pNew,chandrayan.moveBackward());
         }
         else if(curDir.equals("D")){

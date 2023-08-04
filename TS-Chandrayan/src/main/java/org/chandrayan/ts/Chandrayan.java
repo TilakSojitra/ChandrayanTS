@@ -105,12 +105,58 @@ public class Chandrayan {
     }
 
     public Position moveForward() {
-        this.position.setY(this.position.getY()+1);
+        String curDir = this.getDirection();
+        switch(curDir){
+            case "N": // One Step Forward to North Direction.
+                this.position.setY(this.position.getY()+1);
+                break;
+            case "E": // One Step Forward to East Direction
+                this.position.setX(this.position.getX()+1);
+                break;
+            case "U": // One Step Forward to Up Direction
+                this.position.setZ(this.position.getZ()+1);
+                break;
+            case "S": // One Step Forward to South Direction
+                this.position.setY(this.position.getY()-1);
+                break;
+            case "W": // One Step Forward to West Direction
+                this.position.setX(this.position.getX()-1);
+                break;
+            case "D": // One Step Forward to Down Direction
+                this.position.setZ(this.position.getZ()-1);
+                break;
+            default:  // Some Error.
+                System.out.println("Invalid Operation");
+                break;
+        }
         return this.position;
     }
 
     public Position moveBackward() {
-        this.position.setX(this.position.getX()-1);
+        String curDir = this.getDirection();
+        switch(curDir){
+            case "N": // One Step Backward from North Direction.
+                this.position.setY(this.position.getY()-1);
+                break;
+            case "E": // One Step Backward from East Direction.
+                this.position.setX(this.position.getX()-1);
+                break;
+            case "U": // One Step Backward from Up Direction.
+                this.position.setZ(this.position.getZ()-1);
+                break;
+            case "S": // One Step Backward from South Direction.
+                this.position.setY(this.position.getY()+1);
+                break;
+            case "W": // One Step Backward from West Direction.
+                this.position.setX(this.position.getX()+1);
+                break;
+            case "D": // One Step Backward from Down Direction.
+                this.position.setZ(this.position.getZ()+1);
+                break;
+            default: // Some Error.
+                System.out.println("Invalid Operation");
+                break;
+        }
         return this.position;
     }
 }
