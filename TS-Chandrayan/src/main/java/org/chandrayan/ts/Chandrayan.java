@@ -57,11 +57,14 @@ public class Chandrayan {
     }
 
     public String turnUpwards(){
-//        this.setDirection("U");
+        this.setDirection("U");
         return this.direction;
     }
 
-    public String turnDownwards(){ return "D";}
+    public String turnDownwards(){
+        this.setDirection("D");
+        return this.direction;
+    }
 
     public String turnLeft(){
         String curDir = this.getDirection();
