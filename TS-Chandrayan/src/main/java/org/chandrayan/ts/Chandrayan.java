@@ -1,5 +1,7 @@
 package org.chandrayan.ts;
 
+import java.util.Objects;
+
 public class Chandrayan {
 
     private Position position;
@@ -29,15 +31,42 @@ public class Chandrayan {
         this.direction = direction;
     }
 
-    public String turnUpwards(){ return null;}
+    @Override
+    public String toString() {
+        return "Chandrayan{" +
+                "position=" + position +
+                ", direction='" + direction + '\'' +
+                '}';
+    }
 
-    public String turnDownwards(){ return null;}
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Chandrayan that = (Chandrayan) o;
+        return Objects.equals(position, that.position) && Objects.equals(direction, that.direction);
+    }
 
-    public String turnLeft(){ return null;}
+    @Override
+    public int hashCode() {
+        return Objects.hash(position, direction);
+    }
 
-    public String turnRight(){ return null;}
+    public String turnUpwards(){ return "U"; }
 
-    public Position moveForward() { return null; }
+    public String turnDownwards(){ return "D";}
 
-    public Position moveBackward() { return null; }
+    public String turnLeft(){ return "W";}
+
+    public String turnRight(){ return "E";}
+
+    public Position moveForward() {
+        this.position.setY(this.position.getY()+1);
+        return this.position;
+    }
+
+    public Position moveBackward() {
+        this.position.setX(this.position.getX()-1);
+        return this.position;
+    }
 }
