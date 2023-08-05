@@ -22,90 +22,61 @@ public class DriverClassTest {
 
     @Test
     public void testTurnLeft() {
+        chandrayan.setDirection("E");
+        assertEquals("N",chandrayan.turnLeft());
+        chandrayan.setDirection("S");
+        assertEquals("E",chandrayan.turnLeft());
+        chandrayan.setDirection("W");
+        assertEquals("S",chandrayan.turnLeft());
         chandrayan.setDirection("U");
-        String curDir = chandrayan.getDirection();
-
-        if(curDir.equals("N") || curDir.equals("U") || curDir.equals("D")) assertEquals("W",chandrayan.turnLeft());
-        if(curDir.equals("E")) assertEquals("N",chandrayan.turnLeft());
-        if(curDir.equals("S")) assertEquals("E",chandrayan.turnLeft());
-        if(curDir.equals("W")) assertEquals("S",chandrayan.turnLeft());
+        assertEquals("W",chandrayan.turnLeft());
     }
 
     @Test
     public void testTurnRight() {
+        chandrayan.setDirection("W");
+        assertEquals("N",chandrayan.turnRight());
+        chandrayan.setDirection("E");
+        assertEquals("S",chandrayan.turnRight());
+        chandrayan.setDirection("S");
+        assertEquals("W",chandrayan.turnRight());
         chandrayan.setDirection("U");
-        String curDir = chandrayan.getDirection();
-
-        if(curDir.equals("N") || curDir.equals("U") || curDir.equals("D")) assertEquals("E",chandrayan.turnRight());
-        if(curDir.equals("W")) assertEquals("N",chandrayan.turnRight());
-        if(curDir.equals("E")) assertEquals("S",chandrayan.turnRight());
-        if(curDir.equals("S")) assertEquals("W",chandrayan.turnRight());
+        assertEquals("E",chandrayan.turnRight());
     }
 
     @Test
     public void testMoveForward(){
-
-        chandrayan.setDirection("U");
-        String curDir = chandrayan.getDirection();
         Position pOld = new Position(0,-3,4);
         chandrayan.setPosition(pOld);
-
-        if(curDir.equals("N")){
-            Position pNew = new Position(pOld.getX(), pOld.getY()+1, pOld.getZ() );
-            assertEquals(pNew,chandrayan.moveForward());
-        }
-        else if(curDir.equals("E")){
-            Position pNew = new Position(pOld.getX()+1, pOld.getY(), pOld.getZ() );
-            assertEquals(pNew,chandrayan.moveForward());
-        }
-        else if(curDir.equals("U")){
-            Position pNew = new Position(pOld.getX(), pOld.getY(), pOld.getZ()+1);
-            assertEquals(pNew,chandrayan.moveForward());
-        }
-        else if(curDir.equals("S")){
-            Position pNew = new Position(pOld.getX(), pOld.getY()-1, pOld.getZ());
-            assertEquals(pNew,chandrayan.moveForward());
-        }
-        else if(curDir.equals("W")){
-            Position pNew = new Position(pOld.getX()-1, pOld.getY(), pOld.getZ());
-            assertEquals(pNew,chandrayan.moveForward());
-        }
-        else if(curDir.equals("D")){
-            Position pNew = new Position(pOld.getX(), pOld.getY(), pOld.getZ()-1);
-            assertEquals(pNew,chandrayan.moveForward());
-        }
+        chandrayan.setDirection("N");
+        assertEquals(new Position(pOld.getX(), pOld.getY()+1, pOld.getZ() ),chandrayan.moveForward());
+        chandrayan.setDirection("E");
+        assertEquals(new Position(pOld.getX()+1, pOld.getY(), pOld.getZ() ),chandrayan.moveForward());
+        chandrayan.setDirection("U");
+        assertEquals(new Position(pOld.getX(), pOld.getY(), pOld.getZ()+1),chandrayan.moveForward());
+        chandrayan.setDirection("S");
+        assertEquals(new Position(pOld.getX(), pOld.getY()-1, pOld.getZ()),chandrayan.moveForward());
+        chandrayan.setDirection("W");
+        assertEquals(new Position(pOld.getX()-1, pOld.getY(), pOld.getZ()),chandrayan.moveForward());
+        chandrayan.setDirection("D");
+        assertEquals(new Position(pOld.getX(), pOld.getY(), pOld.getZ()-1),chandrayan.moveForward());
     }
 
     @Test
     public void testMoveBackward(){
-        chandrayan.setDirection("U");
-        String curDir = chandrayan.getDirection();
         Position pOld = new Position(0,-3,4);
         chandrayan.setPosition(pOld);
-
-        if(curDir.equals("N")){
-            Position pNew = new Position(pOld.getX(), pOld.getY()-1, pOld.getZ() );
-            assertEquals(pNew,chandrayan.moveBackward());
-        }
-        else if(curDir.equals("E")){
-            Position pNew = new Position(pOld.getX()-1, pOld.getY(), pOld.getZ() );
-            assertEquals(pNew,chandrayan.moveBackward());
-        }
-        else if(curDir.equals("U")){
-            Position pNew = new Position(pOld.getX(), pOld.getY(), pOld.getZ()-1);
-            assertEquals(pNew,chandrayan.moveBackward());
-        }
-        else if(curDir.equals("S")){
-            Position pNew = new Position(pOld.getX(), pOld.getY()+1, pOld.getZ());
-            assertEquals(pNew,chandrayan.moveBackward());
-        }
-        else if(curDir.equals("W")){
-            Position pNew = new Position(pOld.getX()+1, pOld.getY(), pOld.getZ());
-            assertEquals(pNew,chandrayan.moveBackward());
-        }
-        else if(curDir.equals("D")){
-            Position pNew = new Position(pOld.getX(), pOld.getY(), pOld.getZ()+1);
-            assertEquals(pNew,chandrayan.moveBackward());
-        }
+        chandrayan.setDirection("N");
+        assertEquals(new Position(pOld.getX(), pOld.getY()-1, pOld.getZ() ),chandrayan.moveBackward());
+        chandrayan.setDirection("E");
+        assertEquals(new Position(pOld.getX()-1, pOld.getY(), pOld.getZ() ),chandrayan.moveBackward());
+        chandrayan.setDirection("U");
+        assertEquals(new Position(pOld.getX(), pOld.getY(), pOld.getZ()-1),chandrayan.moveBackward());
+        chandrayan.setDirection("S");
+        assertEquals(new Position(pOld.getX(), pOld.getY()+1, pOld.getZ()),chandrayan.moveBackward());
+        chandrayan.setDirection("W");
+        assertEquals(new Position(pOld.getX()+1, pOld.getY(), pOld.getZ()),chandrayan.moveBackward());
+        chandrayan.setDirection("D");
+        assertEquals(new Position(pOld.getX(), pOld.getY(), pOld.getZ()+1),chandrayan.moveBackward());
     }
 }

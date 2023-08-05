@@ -6,6 +6,8 @@ public class Chandrayan {
 
     private Position position;
     private String direction;
+//    private int Speed;
+//    private int increaseStep;
 
     public Chandrayan() {
     }
@@ -17,7 +19,16 @@ public class Chandrayan {
     public Chandrayan(Position position, String direction) {
         this.position = position;
         this.direction = direction;
+//        this.increaseStep = 1;
     }
+
+//    public int getSpeed() {
+//        return Speed;
+//    }
+//
+//    public void setSpeed(int speed) {
+//        Speed = speed;
+//    }
 
     public Position getPosition() {
         return position;
@@ -104,11 +115,18 @@ public class Chandrayan {
         return this.getDirection();
     }
 
+//    public
+
     public Position moveForward() {
+
         String curDir = this.getDirection();
         switch(curDir){
-            case "N": // One Step Forward to North Direction.
-                this.position.setY(this.position.getY()+1);
+            case "N": // One Step Forward to North Direction;
+//                if(this.getSpeed() >= 10)
+//                    this.position.setY(this.position.getY()+2);
+//                else
+                    this.position.setY(this.position.getY()+1);
+//                this.position.setY(this.position.getY()+1);
                 break;
             case "E": // One Step Forward to East Direction
                 this.position.setX(this.position.getX()+1);
